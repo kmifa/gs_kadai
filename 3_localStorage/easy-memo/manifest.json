@@ -1,0 +1,32 @@
+{
+  "name": "Easy Memo",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "ブラウザ上でメモできます。(テスト)",
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+   "browser_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Easy Memo",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "css": ["styles/style.css",
+      "styles/reset.css"],
+      "js": ["scripts/jquery-2.2.2.min.js",
+      "scripts/popup.js"]
+    }
+  ]
+}
